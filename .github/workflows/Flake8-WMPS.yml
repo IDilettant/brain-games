@@ -1,5 +1,5 @@
 
-name: Flake8-WMPS lint
+name: Flake8-WMPS
 
 on:
   - push
