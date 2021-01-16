@@ -1,5 +1,5 @@
 
-name: Python CI
+name: Flake8-WMPS lint
 
 on:
   - push
