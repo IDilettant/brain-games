@@ -2,12 +2,12 @@
 """Main programm."""
 
 from brain_games.cli import welcome_user
+from brain_games.scripts.brain_even import ask_even_game
 
 
 def main():
     """Make a user intreface."""
-    print('Welcome to the Brain Games!')  # noqa: WPS421
-    welcome_user()
+    ask_even_game(welcome_user())
 
 
 if __name__ == '__main__':
