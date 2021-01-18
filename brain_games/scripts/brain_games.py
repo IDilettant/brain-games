@@ -7,7 +7,7 @@ from brain_games.scripts.brain_even import ask_even_game
 
 def main():
     """Make a user intreface."""
-    ask_even_game(welcome_user())
+    welcome_user()
 
 
 if __name__ == '__main__':
