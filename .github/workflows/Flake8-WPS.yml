@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-=======
-
->>>>>>> 87af362 (test: update Flake8-WMPS.yml)
-name: Flake8-WMPS
+name: Flake8-WPS
 
 on:
   - push
