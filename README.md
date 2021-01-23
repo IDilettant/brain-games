@@ -10,3 +10,5 @@ Calculator game demonstration: https://asciinema.org/a/ZuggcGqw6CTYU6Xj2iobA6iRQ
 Greatest common divisor game demonsration: https://asciinema.org/a/szEHoUHmy8P7KIdOBc6bFRkxc
 
 Arithmetic progression game demonstration: https://asciinema.org/a/PNX38HOI6HfKMo27U2YZ5pAS1
+
+Prime number game demonstration: https://asciinema.org/a/mygmU0V6hPebEFXVD7xDtiSjW
