@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-"""Fairness check game."""
+"""Even check game."""
 
 import random
 
@@ -11,8 +11,8 @@ from brain_games.cli import welcome_user
 def ask_even_game(username):
     """Offer to player to determine the parity of random number.
 
-    Up to three correct answers.
-    """  # noqa: DAR101
+    Up to three correct answers. Return None in case of wrong answer.
+    """  # noqa: DAR101 DAR201
     correct_answer = 0
     print('Answer "yes" if the number is even, otherwise answer "no".')  # noqa: WPS421
     while correct_answer < 3:

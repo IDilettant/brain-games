@@ -2,7 +2,6 @@
 """Main programm."""
 
 from brain_games.cli import welcome_user
-from brain_games.scripts.brain_even import ask_even_game
 
 
 def main():
