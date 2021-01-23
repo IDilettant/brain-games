@@ -8,3 +8,5 @@ Even-check game demonstration: https://asciinema.org/a/xAc8nz7Rxds2jKtY1iEWeHqSR
 Calculator game demonstration: https://asciinema.org/a/ZuggcGqw6CTYU6Xj2iobA6iRQ
 
 Greatest common divisor game demonsration: https://asciinema.org/a/szEHoUHmy8P7KIdOBc6bFRkxc
+
+Arithmetic progression game demonstration: https://asciinema.org/a/PNX38HOI6HfKMo27U2YZ5pAS1
