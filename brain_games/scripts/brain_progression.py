@@ -18,7 +18,6 @@ def generate_question():
     step_value = random. randint(1, sequence_size_limiter)  # noqa: S311
     position_in_sequence = random.randint(1, sequence_size_limiter)  # noqa: S311
     sequence = [str(number) for number in range(start_number, start_number + sequence_size_limiter * step_value, step_value)]
-    correct_answer = sequence[position_in_sequence]
     sequence[position_in_sequence] = '..'
     question = ' '.join(sequence)
     return question
