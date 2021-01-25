@@ -34,7 +34,7 @@ def calculate_correct_answer(question):
     for item in range(3, int(question ** 0.5) + 1, 2):  # noqa: WPS110
         if question % item == 0:
             return 'no'
-        return 'yes'
+    return 'yes'
 
 
 def main():
