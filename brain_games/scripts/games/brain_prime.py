@@ -27,7 +27,6 @@ def calculate_correct_answer(question):
     Returns:
         Return 'yes' or 'no' (str)
     """
-    question = int(question)
     if question == 2:
         return 'yes'
     if question % 2 == 0 or question < 2:
