@@ -1,11 +1,16 @@
-"""Command line interface for brain-games. Returns player name."""
+"""Command line interface for brain-games."""
 
 import prompt
 
 
 def welcome_user():
-    """Get an user name, greet player and return user name."""  # noqa: DAR201
-    print('Welcome to the Brain Games!')  # noqa: WPS421
+    """Get an user name, greet player and return user name.
+
+    Returns:
+        Return username (str)
+
+    """
+    print('Welcome to the Brain Games!')
     username = prompt.string('May I have your name? ')
-    print('Hello, {0}!'.format(username))  # noqa: WPS421
+    print('Hello, {0}!'.format(username))
     return username

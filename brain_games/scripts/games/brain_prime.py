@@ -5,35 +5,41 @@ import random
 from brain_games.cli import welcome_user
 from brain_games.scripts.brain_game_engine import run_game_engine
 
-PURPOSE_OF_THE_GAME = (
-    'Answer "yes" if given number is prime. Otherwise answer "no".'
-    )
+PURPOSE_OF_THE_GAME = 'Answer "yes" if given number is prime. Otherwise answer "no".'
 
 
 def generate_question():
-    number_size_limiter = 99  # noqa: WPS311
+    """Generate a random number.
+
+    Returns:
+        Return number (int)
+    """
+    number_size_limiter = 99
     return random.randint(1, number_size_limiter)
 
 
 def calculate_correct_answer(question):
-    def is_prime(number):
-        if number == 2:
-            return True
-        if number % 2 == 0 or number < 2:
-            return False
-        for item in range(3, int(number ** 0.5) + 1, 2):  # noqa: WPS110
-            if number % item == 0:
-                return False
-        return True
+    """Determine if question is a prime number.
 
-    if is_prime(int(question)):
+    Args:
+        question (int): some number
+
+    Returns:
+        Return 'yes' or 'no' (str)
+    """
+    if question == 2:
         return 'yes'
+    if question % 2 == 0 or question < 2:
+        return 'no'
+    for item in range(3, int(question ** 0.5) + 1, 2):  # noqa: WPS110
+        if question % item == 0:
+            return 'yes'
     return 'no'
 
 
 def main():
-    """."""
-    run_game_engine(welcome_user, purpose_of_the_game, generate_question, calculate_correct_answer)
+    """Run main function."""
+    run_game_engine(welcome_user, PURPOSE_OF_THE_GAME, generate_question, calculate_correct_answer)
 
 
 if __name__ == '__main__':

@@ -9,17 +9,26 @@ PURPOSE_OF_THE_GAME = 'Find the greatest common divisor of given numbers.'
 
 
 def generate_question():
-    """.
+    """Generate two random numbers.
 
-    :return:
+    Returns:
+        Return str with two numbers.
     """
-    number_size_limiter = 99
-    first_number = random.randint(1, number_size_limiter)  # noqa: S311
-    second_number = random.randint(1, number_size_limiter)  # noqa: S311
+    number_size_limiter = 99  # limit the random number to two-digits for the convenience of the player
+    first_number = random.randint(1, number_size_limiter)
+    second_number = random.randint(1, number_size_limiter)
     return '{0} {1}'.format(first_number, second_number)
 
 
 def calculate_correct_answer(question):
+    """Find the greatest common divisor of two numbers.
+
+    Args:
+        question (str): two numbers
+
+    Returns:
+        Return GCD (str)
+    """
     first_number, second_number = [int(number) for number in question.split()]
     while second_number != 0:
         first_number, second_number = (
@@ -29,7 +38,8 @@ def calculate_correct_answer(question):
 
 
 def main():
-    run_game_engine(welcome_user, purpose_of_the_game, generate_question, calculate_correct_answer)
+    """Run main function."""
+    run_game_engine(welcome_user, PURPOSE_OF_THE_GAME, generate_question, calculate_correct_answer)
 
 
 if __name__ == '__main__':

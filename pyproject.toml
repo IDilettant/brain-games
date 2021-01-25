@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "hexlet-code"
-version = "0.7.0"
-description = ""
+version = "0.7.1"
+description = "Hexlet website educational project on creating a text intellectual game"
 authors = ["Dilettant <dedenev1985@gmail.com>"]
 packages = [
 	{include = "brain_games"},
@@ -10,6 +10,7 @@ packages = [
 [tool.poetry.dependencies]
 python = "^3.8"
 prompt = "^0.4.1"
+make = "^0.1.6"
 
 [tool.poetry.dev-dependencies]
 wemake-python-styleguide = "^0.14.1"
@@ -20,8 +21,8 @@ build-backend = "poetry.core.masonry.api"
 
 [tool.poetry.scripts]
 brain-games = "brain_games.scripts.brain_games:main"
-brain-even = "brain_games.scripts.brain_even:main"
-brain-calc = "brain_games.scripts.brain_calc:main"
-brain-gcd = "brain_games.scripts.brain_gcd:main"
-brain-progression = "brain_games.scripts.brain_progression:main"
-brain-prime = "brain_games.scripts.brain_prime:main"
+brain-even = "brain_games.scripts.games.brain_even:main"
+brain-calc = "brain_games.scripts.games.brain_calc:main"
+brain-gcd = "brain_games.scripts.games.brain_gcd:main"
+brain-progression = "brain_games.scripts.games.brain_progression:main"
+brain-prime = "brain_games.scripts.games.brain_prime:main"
