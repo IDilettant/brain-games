@@ -5,7 +5,9 @@ import random
 from brain_games.cli import welcome_user
 from brain_games.scripts.brain_game_engine import run_game_engine
 
-PURPOSE_OF_THE_GAME = 'Answer "yes" if given number is prime. Otherwise answer "no".'
+PURPOSE_OF_THE_GAME = (
+    'Answer "yes" if given number is prime. Otherwise answer "no".'
+)
 
 
 def generate_question():
@@ -19,7 +21,7 @@ def generate_question():
 
 
 def calculate_correct_answer(question):
-    """Determine if question is a prime number.
+    """Determine if a number is prime.
 
     Args:
         question (int): some number
@@ -39,7 +41,12 @@ def calculate_correct_answer(question):
 
 def main():
     """Run main function."""
-    run_game_engine(welcome_user, PURPOSE_OF_THE_GAME, generate_question, calculate_correct_answer)
+    run_game_engine(
+        welcome_user,
+        PURPOSE_OF_THE_GAME,
+        generate_question,
+        calculate_correct_answer,
+    )
 
 
 if __name__ == '__main__':

@@ -20,7 +20,9 @@ def generate_question():  # noqa: WPS210
     step_value = random. randint(1, sequence_size_limiter)
     position_in_sequence = random.randint(1, sequence_size_limiter)
     sequence = [str(number) for number in range(
-        start_number, start_number + sequence_size_limiter * step_value, step_value,
+        start_number,
+        start_number + sequence_size_limiter * step_value,
+        step_value,
     )]
     sequence[position_in_sequence] = '..'
     return ' '.join(sequence)
@@ -50,7 +52,12 @@ def calculate_correct_answer(question):
 
 def main():
     """Run main function."""
-    run_game_engine(welcome_user, PURPOSE_OF_THE_GAME, generate_question, calculate_correct_answer)
+    run_game_engine(
+        welcome_user,
+        PURPOSE_OF_THE_GAME,
+        generate_question,
+        calculate_correct_answer,
+    )
 
 
 if __name__ == '__main__':

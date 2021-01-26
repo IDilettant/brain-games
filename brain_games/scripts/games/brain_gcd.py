@@ -14,7 +14,8 @@ def generate_question():
     Returns:
         Return str with two numbers.
     """
-    number_size_limiter = 99  # limit the random number to two-digits for the convenience of the player
+    number_size_limiter = 99  # limit the random number to
+    # two-digits for the convenience of the player
     first_number = random.randint(1, number_size_limiter)
     second_number = random.randint(1, number_size_limiter)
     return '{0} {1}'.format(first_number, second_number)
@@ -39,7 +40,12 @@ def calculate_correct_answer(question):
 
 def main():
     """Run main function."""
-    run_game_engine(welcome_user, PURPOSE_OF_THE_GAME, generate_question, calculate_correct_answer)
+    run_game_engine(
+        welcome_user,
+        PURPOSE_OF_THE_GAME,
+        generate_question,
+        calculate_correct_answer,
+    )
 
 
 if __name__ == '__main__':

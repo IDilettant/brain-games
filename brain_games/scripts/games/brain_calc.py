@@ -16,10 +16,14 @@ def generate_question():
     """
     # limit the random number to two-digits for the convenience of the player
     number_size_limiter = 99
-    first_number = random.randint(1, number_size_limiter)  # noqa: S311
-    second_number = random.randint(1, number_size_limiter)  # noqa: S311
-    math_operation_sign = random.choice(('+', '-', '*'))  # noqa: S311
-    return '{0} {1} {2}'.format(first_number, math_operation_sign, second_number)
+    first_number = random.randint(1, number_size_limiter)
+    second_number = random.randint(1, number_size_limiter)
+    math_operation_sign = random.choice(('+', '-', '*'))
+    return '{0} {1} {2}'.format(
+        first_number,
+        math_operation_sign,
+        second_number,
+    )
 
 
 def calculate_correct_answer(question):
@@ -36,7 +40,12 @@ def calculate_correct_answer(question):
 
 def main():
     """Run main function."""
-    run_game_engine(welcome_user, PURPOSE_OF_THE_GAME, generate_question, calculate_correct_answer)
+    run_game_engine(
+        welcome_user,
+        PURPOSE_OF_THE_GAME,
+        generate_question,
+        calculate_correct_answer,
+    )
 
 
 if __name__ == '__main__':

@@ -2,18 +2,26 @@
 import prompt
 
 
-def run_game_engine(welcome_user, purpose_of_the_game, generate_question, calculate_correct_answer):
+def run_game_engine(
+    welcome_user,
+    purpose_of_the_game,
+    generate_question,
+    calculate_correct_answer,
+):
     """Run template for text game.
 
     Args:
-        welcome_user (function): Get an user name, greet player and return user name
-        purpose_of_the_game (str): The description of the task for the game
-        generate_question (function): Generate and return question for the game
-        calculate_correct_answer (function): Calculate and return answer for actual game
+        welcome_user (function):
+            Get an user name, greet player and return username
+        purpose_of_the_game (str):
+            The description of the task for the game
+        generate_question (function):
+            Generate and return question for the game
+        calculate_correct_answer (function):
+            Calculate and return answer for actual game
 
     Returns:
         Return None.
-
     """
     username = welcome_user()
     print(purpose_of_the_game)
