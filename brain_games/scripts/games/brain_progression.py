@@ -18,7 +18,7 @@ def generate_question():  # noqa: WPS210
     sequence_size_limiter = 10
     start_number = random.randint(1, number_size_limiter)
     step_value = random. randint(1, sequence_size_limiter)
-    position_in_sequence = random.randint(1, sequence_size_limiter)
+    position_in_sequence = random.randint(0, sequence_size_limiter - 1)
     sequence = [str(number) for number in range(
         start_number,
         start_number + sequence_size_limiter * step_value,
