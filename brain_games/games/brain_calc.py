@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """Calculate game."""
+import operator
 import random
 
 from brain_games.cli import welcome_user
@@ -35,7 +36,22 @@ def calculate_correct_answer(question):
     Returns:
         Return the result of evaluating a mathematical expression (str)
     """
-    return str(eval(question))  # noqa: WPS421 S307
+    if question[1] == '+':
+        expr_result = operator.add(
+            int(question[0]),
+            int(question[2]),
+        )
+    elif question[1] == '-':
+        expr_result = operator.sub(
+            int(question[0]),
+            int(question[2]),
+        )
+    elif question[1] == '*':
+        expr_result = operator.mul(
+            int(question[0]),
+            int(question[2]),
+        )
+    return str(expr_result)
 
 
 def main():
