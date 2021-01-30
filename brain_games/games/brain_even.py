@@ -3,7 +3,7 @@
 import random
 
 from brain_games.cli import welcome_user
-from brain_games.scripts.brain_game_engine import run_game_engine
+from brain_games.scripts.engine import run_game_engine
 
 DESCRIPTION = (
     'Answer "yes" if the number is even, otherwise answer "no".'
