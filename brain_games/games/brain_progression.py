@@ -5,7 +5,7 @@ import random
 from brain_games.cli import welcome_user
 from brain_games.scripts.brain_game_engine import run_game_engine
 
-PURPOSE_OF_THE_GAME = 'What number is missing in the progression?'
+DESCRIPTION = 'What number is missing in the progression?'
 
 
 def generate_question():  # noqa: WPS210
@@ -54,7 +54,7 @@ def main():
     """Run main function."""
     run_game_engine(
         welcome_user,
-        PURPOSE_OF_THE_GAME,
+        DESCRIPTION,
         generate_question,
         calculate_correct_answer,
     )

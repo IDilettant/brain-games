@@ -4,7 +4,7 @@ import prompt
 
 def run_game_engine(
     welcome_user,
-    purpose_of_the_game,
+    description,
     generate_question,
     calculate_correct_answer,
 ):
@@ -24,7 +24,7 @@ def run_game_engine(
         Return None.
     """
     username = welcome_user()
-    print(purpose_of_the_game)
+    print(description)
     for _point in range(3):  # noqa: WPS122
         question = generate_question()
         correct_answer = calculate_correct_answer(question)
@@ -41,3 +41,4 @@ Let's try again, {2}!
             return None
 
     print('Congratulations, {0}!'.format(username))
+
