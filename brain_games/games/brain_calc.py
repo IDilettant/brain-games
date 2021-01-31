@@ -3,8 +3,6 @@
 import operator
 import random
 
-from brain_games.scripts.engine import run_engine
-
 DESCRIPTION = 'What is the result of the expression?'
 
 
@@ -51,12 +49,3 @@ def calculate_correct_answer(question):
             int(question[2]),
         )
     return str(expr_result)
-
-
-def main():
-    """Run main function."""
-    run_engine(brain_calc)
-
-
-if __name__ == '__main__':
-    main()

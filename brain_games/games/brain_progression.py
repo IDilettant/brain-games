@@ -2,8 +2,6 @@
 """Arithmetic progression game."""
 import random
 
-from brain_games.scripts.engine import run_engine
-
 DESCRIPTION = 'What number is missing in the progression?'
 
 
@@ -47,12 +45,3 @@ def calculate_correct_answer(question):
     if index_missing_number != 0:
         return str(question[index_missing_number - 1] + step_of_sequence)
     return str(question[index_missing_number + 1] - step_of_sequence)
-
-
-def main():
-    """Run main function."""
-    run_engine(brain_progression)
-
-
-if __name__ == '__main__':
-    main()

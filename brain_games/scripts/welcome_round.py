@@ -2,4 +2,5 @@
 """Run brain-games game."""
 from brain_games.games.brain_games import main
 
-main()
+if __name__ == '__main__':
+    main()

@@ -2,8 +2,6 @@
 """Prime number game."""
 import random
 
-from brain_games.scripts.engine import run_engine
-
 DESCRIPTION = (
     'Answer "yes" if given number is prime. Otherwise answer "no".'
 )
@@ -36,12 +34,3 @@ def calculate_correct_answer(question):
         if question % item == 0:
             return 'no'
     return 'yes'
-
-
-def main():
-    """Run main function."""
-    run_engine(brain_prime)
-
-
-if __name__ == '__main__':
-    main()

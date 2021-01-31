@@ -2,8 +2,6 @@
 """Even-check game."""
 import random
 
-from brain_games.scripts.engine import run_engine
-
 DESCRIPTION = (
     'Answer "yes" if the number is even, otherwise answer "no".'
 )
@@ -32,12 +30,3 @@ def calculate_correct_answer(question):
     if question % 2 == 0:
         return 'yes'
     return 'no'
-
-
-def main():
-    """Run main function."""
-    run_engine(brain_even)
-
-
-if __name__ == '__main__':
-    main()
