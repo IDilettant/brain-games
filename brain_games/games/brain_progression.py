@@ -29,13 +29,13 @@ def generate_question():  # noqa: WPS210
     sequence_size_limiter = 10
     start_number = random.randint(1, number_size_limiter)
     step_value = random. randint(1, sequence_size_limiter)
-    missing_num_index = random.randint(0, sequence_size_limiter - 1)
+    missing_num_pos = random.randint(0, sequence_size_limiter - 1)
     sequence = [str(number) for number in generate_progression(
         start_number,
         sequence_size_limiter,
         step_value,
     )]
-    sequence[missing_num_index] = '..'
+    sequence[missing_num_pos] = '..'
     return ' '.join(sequence)
 
 
@@ -49,13 +49,13 @@ def calculate_correct_answer(question):
         Return number (int)
     """
     question = question.split()
-    missing_num_index = question.index('..')
-    question[missing_num_index] = 0
+    missing_num_pos = question.index('..')
+    question[missing_num_pos] = 0
     question = [int(number) for number in question]
     for number in range(len(question)):  # noqa: WPS518
         if question[number] != 0 and question[number + 1] != 0:
             step_of_sequence = question[number + 1] - question[number]
             break
     if missing_num_index != 0:
-        return str(question[missing_num_index - 1] + step_of_sequence)
-    return str(question[missing_num_index + 1] - step_of_sequence)
+        return str(question[missing_num_pos - 1] + step_of_sequence)
+    return str(question[missing_num_pos + 1] - step_of_sequence)
