@@ -18,8 +18,25 @@ def generate_question():
     return '{0} {1}'.format(first_number, second_number)
 
 
-def calculate_correct_answer(question):
+def find_gcd(question):
     """Find the greatest common divisor of two numbers.
+
+    Args:
+        question (str): two numbers
+
+    Returns:
+        Return GCD (int)
+    """
+    first_number, second_number = [int(number) for number in question.split()]
+    while second_number != 0:
+        first_number, second_number = (
+            second_number, first_number % second_number,
+        )
+    return first_number
+
+
+def calculate_correct_answer(question):
+    """Convert found greatest common divisor of two numbers to string.
 
     Args:
         question (str): two numbers
@@ -27,9 +44,4 @@ def calculate_correct_answer(question):
     Returns:
         Return GCD (str)
     """
-    first_number, second_number = [int(number) for number in question.split()]
-    while second_number != 0:
-        first_number, second_number = (
-            second_number, first_number % second_number,
-        )
-    return str(first_number)
+    return str(find_gcd(question))

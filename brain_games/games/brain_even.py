@@ -18,8 +18,24 @@ def generate_question():
     return random.randint(1, number_size_limiter)
 
 
-def calculate_correct_answer(question):
+def is_even(question):
     """Determine if the number is even.
+
+    Args:
+        question (int): some number
+
+    Returns:
+        Return True or False (bool)
+    """
+    if question % 2 == 0:
+        return True
+    return False
+
+
+def calculate_correct_answer(question):
+    """Check a number for even.
+
+    Return 'yes' or 'no' depending on its parity
 
     Args:
         question (int): some number
@@ -27,6 +43,6 @@ def calculate_correct_answer(question):
     Returns:
         Return 'yes' or 'no' (str)
     """
-    if question % 2 == 0:
+    if is_even(question):
         return 'yes'
     return 'no'
