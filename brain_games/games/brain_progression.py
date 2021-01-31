@@ -5,7 +5,7 @@ import random
 DESCRIPTION = 'What number is missing in the progression?'
 
 
-def generate_progression(start, step, length):
+def generate_progression(start, length, step):
     """Generate arithmetic progression.
 
     Args:
@@ -20,7 +20,7 @@ def generate_progression(start, step, length):
 
 
 def generate_question():  # noqa: WPS210
-    """Generate arithmetic sequence with random skip.
+    """Generate arithmetic sequence with random skip.45
 
     Returns:
         Return sequence (str)
@@ -32,11 +32,11 @@ def generate_question():  # noqa: WPS210
     missing_num_index = random.randint(0, sequence_size_limiter - 1)
     sequence = [str(number) for number in generate_progression(
         start_number,
-        start_number + sequence_size_limiter * step_value,
+        sequence_size_limiter,
         step_value,
     )]
     sequence[missing_num_index] = '..'
-    return ' '.join(sequence)   
+    return ' '.join(sequence)
 
 
 def calculate_correct_answer(question):

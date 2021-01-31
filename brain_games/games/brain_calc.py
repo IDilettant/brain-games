@@ -33,6 +33,7 @@ def calculate_correct_answer(question):
     Returns:
         Return the result of evaluating a mathematical expression (str)
     """
+    question = question.split()
     if question[1] == '+':
         expr_result = operator.add(
             int(question[0]),

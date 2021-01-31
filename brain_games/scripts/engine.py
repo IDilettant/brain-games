@@ -16,7 +16,7 @@ def run_engine(game_modul):
         Return None.
     """
     username = welcome_user()
-    print(game_modul.description)
+    print(game_modul.DESCRIPTION)
     for _point in range(3):  # noqa: WPS122
         question = game_modul.generate_question()
         correct_answer = game_modul.calculate_correct_answer(question)
