@@ -56,6 +56,6 @@ def calculate_correct_answer(question):
         if question[number] != 0 and question[number + 1] != 0:
             step_of_sequence = question[number + 1] - question[number]
             break
-    if missing_num_index != 0:
+    if missing_num_pos != 0:
         return str(question[missing_num_pos - 1] + step_of_sequence)
     return str(question[missing_num_pos + 1] - step_of_sequence)
