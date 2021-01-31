@@ -2,8 +2,7 @@
 """Arithmetic progression game."""
 import random
 
-from brain_games.cli import welcome_user
-from brain_games.scripts.engine import run_game_engine
+from brain_games.scripts.engine import run_engine
 
 DESCRIPTION = 'What number is missing in the progression?'
 
@@ -52,12 +51,7 @@ def calculate_correct_answer(question):
 
 def main():
     """Run main function."""
-    run_game_engine(
-        welcome_user,
-        DESCRIPTION,
-        generate_question,
-        calculate_correct_answer,
-    )
+    run_engine(brain_progression)
 
 
 if __name__ == '__main__':

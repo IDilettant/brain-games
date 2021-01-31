@@ -2,8 +2,7 @@
 """Greatest common divisor game."""
 import random
 
-from brain_games.cli import welcome_user
-from brain_games.scripts.engine import run_game_engine
+from brain_games.scripts.engine import run_engine
 
 DESCRIPTION = 'Find the greatest common divisor of given numbers.'
 
@@ -40,12 +39,7 @@ def calculate_correct_answer(question):
 
 def main():
     """Run main function."""
-    run_game_engine(
-        welcome_user,
-        DESCRIPTION,
-        generate_question,
-        calculate_correct_answer,
-    )
+    run_engine(brain_gcd)
 
 
 if __name__ == '__main__':
