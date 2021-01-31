@@ -20,7 +20,7 @@ def generate_progression(start, length, step):
 
 
 def generate_question():  # noqa: WPS210
-    """Generate arithmetic sequence with random skip.45
+    """Generate arithmetic sequence with random skip.
 
     Returns:
         Return sequence (str)
