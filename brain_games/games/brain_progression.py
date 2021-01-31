@@ -5,6 +5,20 @@ import random
 DESCRIPTION = 'What number is missing in the progression?'
 
 
+def generate_progression(start, step, length):
+    """Generate arithmetic progression.
+
+    Args:
+        start (int): first number in sequence
+        step (int): difference between adjacent numbers in a sequence
+        length (int): number of elements in sequence
+
+    Returns:
+        Return arithmetic progression (list)
+    """
+    return list(range(start, start + length * step, step))
+
+
 def generate_question():  # noqa: WPS210
     """Generate arithmetic sequence with random skip.
 
@@ -15,14 +29,14 @@ def generate_question():  # noqa: WPS210
     sequence_size_limiter = 10
     start_number = random.randint(1, number_size_limiter)
     step_value = random. randint(1, sequence_size_limiter)
-    position_in_sequence = random.randint(0, sequence_size_limiter - 1)
-    sequence = [str(number) for number in range(
+    missing_num_index = random.randint(0, sequence_size_limiter - 1)
+    sequence = [str(number) for number in generate_progression(
         start_number,
         start_number + sequence_size_limiter * step_value,
         step_value,
     )]
-    sequence[position_in_sequence] = '..'
-    return ' '.join(sequence)
+    sequence[missing_num_index] = '..'
+    return ' '.join(sequence)   
 
 
 def calculate_correct_answer(question):
@@ -35,13 +49,13 @@ def calculate_correct_answer(question):
         Return number (int)
     """
     question = question.split()
-    index_missing_number = question.index('..')
-    question[index_missing_number] = 0
+    missing_num_index = question.index('..')
+    question[missing_num_index] = 0
     question = [int(number) for number in question]
     for number in range(len(question)):  # noqa: WPS518
         if question[number] != 0 and question[number + 1] != 0:
             step_of_sequence = question[number + 1] - question[number]
             break
-    if index_missing_number != 0:
-        return str(question[index_missing_number - 1] + step_of_sequence)
-    return str(question[index_missing_number + 1] - step_of_sequence)
+    if missing_num_index != 0:
+        return str(question[missing_num_index - 1] + step_of_sequence)
+    return str(question[missing_num_index + 1] - step_of_sequence)
