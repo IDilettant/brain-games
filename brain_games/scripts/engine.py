@@ -1,33 +1,25 @@
 """Template for running games."""
 import prompt
 
+from brain_games.cli import welcome_user
 
-def run_game_engine(
-    welcome_user,
-    description,
-    generate_question,
-    calculate_correct_answer,
-):
+
+def run_engine(game_modul):
     """Run template for text game.
 
     Args:
-        welcome_user (function):
-            Get an user name, greet player and return username
-        purpose_of_the_game (str):
-            The description of the task for the game
-        generate_question (function):
-            Generate and return question for the game
-        calculate_correct_answer (function):
-            Calculate and return answer for actual game
+        game_modul:
+            Provides access to functions that
+            generate values unique for each game
 
     Returns:
         Return None.
     """
     username = welcome_user()
-    print(description)
+    print(game_modul.description)
     for _point in range(3):  # noqa: WPS122
-        question = generate_question()
-        correct_answer = calculate_correct_answer(question)
+        question = game_modul.generate_question()
+        correct_answer = game_modul.calculate_correct_answer(question)
         print('Question: {0}'.format(question))
         answer = prompt.string('Your answer: ')
         if answer == correct_answer:
@@ -41,4 +33,3 @@ Let's try again, {2}!
             return None
 
     print('Congratulations, {0}!'.format(username))
-
