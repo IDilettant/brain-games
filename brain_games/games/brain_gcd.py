@@ -18,7 +18,7 @@ def generate_question():
     return '{0} {1}'.format(first_number, second_number)
 
 
-def find_gcd(question):
+def gcd(question):
     """Find the greatest common divisor of two numbers.
 
     Args:
