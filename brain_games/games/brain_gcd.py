@@ -44,4 +44,4 @@ def calculate_correct_answer(question):
     Returns:
         Return GCD (str)
     """
-    return str(find_gcd(question))
+    return str(gcd(question))
