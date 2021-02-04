@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Run brain-gcd game."""
 from brain_games.games import brain_gcd
-from brain_games.scripts.engine import run_engine
+from brain_games.engine import run_engine
 
 
 def main():
