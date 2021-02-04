@@ -34,19 +34,9 @@ def calculate_correct_answer(question):
         Return the result of evaluating a mathematical expression (str)
     """
     question = question.split()
-    if question[1] == '+':
-        expr_result = operator.add(
-            int(question[0]),
-            int(question[2]),
-        )
-    elif question[1] == '-':
-        expr_result = operator.sub(
-            int(question[0]),
-            int(question[2]),
-        )
-    elif question[1] == '*':
-        expr_result = operator.mul(
-            int(question[0]),
-            int(question[2]),
-        )
+    operators = {'+': operator.add, '-': operator.sub, '*': operator.mul}
+    expr_result = operators[question[1]](
+        int(question[0]),
+        int(question[2]),
+    )
     return str(expr_result)
