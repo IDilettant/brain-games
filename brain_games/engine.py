@@ -4,20 +4,21 @@ import prompt
 from brain_games.cli import welcome_user
 
 
-def run_engine(game_modul):
+def run_engine(game_modul, rounds_number=3):
     """Run template for text game.
 
     Args:
         game_modul:
             Provides access to functions that
             generate values unique for each game
+        rounds_number (int):
+            Number of rounds in the current game
 
     Returns:
         Return None.
     """
     username = welcome_user()
     print(game_modul.DESCRIPTION)
-    rounds_number = 3
     for _point in range(rounds_number):  # noqa: WPS122
         question = game_modul.generate_question()
         correct_answer = game_modul.calculate_correct_answer(question)

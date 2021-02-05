@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Run brain-even game."""
-from brain_games.games import brain_even
 from brain_games.engine import run_engine
+from brain_games.games import brain_even
 
 
 def main():
