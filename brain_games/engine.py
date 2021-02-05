@@ -20,8 +20,7 @@ def run_engine(game_modul, rounds_number=3):
     username = welcome_user()
     print(game_modul.DESCRIPTION)
     for _point in range(rounds_number):  # noqa: WPS122
-        question = game_modul.generate_question()
-        correct_answer = game_modul.calculate_correct_answer(question)
+        question, correct_answer = game_modul.generate_round()
         print('Question: {0}'.format(question))
         answer = prompt.string('Your answer: ')
         if answer == correct_answer:

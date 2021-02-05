@@ -19,11 +19,11 @@ def generate_progression(start, length, step):
     return list(range(start, start + length * step, step))
 
 
-def generate_question():  # noqa: WPS210
+def generate_round():  # noqa: WPS210
     """Generate arithmetic sequence with random skip.
 
     Returns:
-        Return sequence (str)
+        Return sequence and value of scip (str)
     """
     number_size_limiter = 99
     sequence_size_limiter = 10
@@ -35,27 +35,6 @@ def generate_question():  # noqa: WPS210
         sequence_size_limiter,
         step_value,
     )]
+    correct_answer = sequence[missing_num_pos]
     sequence[missing_num_pos] = '..'
-    return ' '.join(sequence)
-
-
-def calculate_correct_answer(question):
-    """Calculate the number missing in the arithmetic sequence.
-
-    Args:
-        question (str): arithmetic sequence
-
-    Returns:
-        Return number (int)
-    """
-    question = question.split()
-    missing_num_pos = question.index('..')
-    question[missing_num_pos] = 0
-    question = [int(number) for number in question]
-    for number in range(len(question)):  # noqa: WPS518
-        if question[number] != 0 and question[number + 1] != 0:
-            step_of_sequence = question[number + 1] - question[number]
-            break
-    if missing_num_pos != 0:
-        return str(question[missing_num_pos - 1] + step_of_sequence)
-    return str(question[missing_num_pos + 1] - step_of_sequence)
+    return ' '.join(sequence), correct_answer

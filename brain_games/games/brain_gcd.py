@@ -45,3 +45,15 @@ def calculate_correct_answer(question):
         Return GCD (str)
     """
     return str(gcd(question))
+
+
+def generate_round():
+    """Accumulates round-specific question and answer meanings.
+
+    Returns:
+        Returns calling a functions that
+        returns of values question and answer
+    """
+    question = generate_question()
+    correct_answer = calculate_correct_answer(question)
+    return question, correct_answer
