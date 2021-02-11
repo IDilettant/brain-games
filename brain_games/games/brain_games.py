@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Main programm."""
 
-from brain_games.cli import welcome_user
+from brain_games.engine import welcome_user
 
 
 def main():

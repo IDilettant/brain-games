@@ -1,6 +1,7 @@
 """Template for running games."""
 import prompt
 
+
 def welcome_user():
     """Get an user name, greet player and return user name.
 
