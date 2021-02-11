@@ -15,7 +15,7 @@ def generate_question():
     # two-digits for the convenience of the player
     first_number = random.randint(1, number_size_limiter)
     second_number = random.randint(1, number_size_limiter)
-    return '{0} {1}'.format(first_number, second_number)
+    return first_number, second_number
 
 
 def gcd(question):
@@ -27,7 +27,7 @@ def gcd(question):
     Returns:
         Return GCD (int)
     """
-    first_number, second_number = [int(number) for number in question.split()]
+    first_number, second_number = question
     while second_number != 0:
         first_number, second_number = (
             second_number, first_number % second_number,
@@ -56,4 +56,5 @@ def generate_round():
     """
     question = generate_question()
     correct_answer = calculate_correct_answer(question)
+    question = '{0} {1}'.format(*question)
     return question, correct_answer
