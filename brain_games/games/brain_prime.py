@@ -47,9 +47,7 @@ def calculate_correct_answer(question):
     Returns:
         Return 'yes' or 'no' (str)
     """
-    if is_prime(question):
-        return 'yes'
-    return 'no'
+    if is_prime(question) return 'yes' else return 'no'
 
 
 def generate_round():
