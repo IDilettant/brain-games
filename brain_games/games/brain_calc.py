@@ -18,7 +18,7 @@ def generate_question():
     first_number = random.randint(1, number_size_limiter)
     second_number = random.randint(1, number_size_limiter)
     math_operation_sign = random.choice(list(operators.keys()))
-    return '{0} {1} {2}'.format(
+    return (
         first_number,
         math_operation_sign,
         second_number,
@@ -35,11 +35,10 @@ def calculate_correct_answer(question):
         Return the result of evaluating a mathematical expression (str)
     """
     question = question.split()
-    expr_result = operators[question[1]](
+    return operators[question[1]](
         int(question[0]),
         int(question[2]),
     )
-    return str(expr_result)
 
 
 def generate_round():
@@ -50,5 +49,6 @@ def generate_round():
         returns of values question and answer
     """
     question = generate_question()
-    correct_answer = calculate_correct_answer(question)
+    correct_answer = str(calculate_correct_answer(question))
+    question = '{0} {1} {2}'.format(*question)
     return question, correct_answer
