@@ -1,7 +1,17 @@
 """Template for running games."""
 import prompt
 
-from brain_games.cli import welcome_user
+def welcome_user():
+    """Get an user name, greet player and return user name.
+
+    Returns:
+        Return username (str)
+
+    """
+    print('Welcome to the Brain Games!')
+    username = prompt.string('May I have your name? ')
+    print('Hello, {0}!'.format(username))
+    return username
 
 
 def run_engine(game_modul, rounds_number=3):
