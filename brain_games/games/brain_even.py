@@ -7,17 +7,6 @@ DESCRIPTION = (
 )
 
 
-def generate_question():
-    """Generate a random number.
-
-    Returns:
-        Return number (int)
-    """
-    # limit the random number to two-digits for the convenience of the player
-    number_size_limiter = 99
-    return random.randint(1, number_size_limiter)
-
-
 def is_even(question):
     """Determine if the number is even.
 
@@ -43,9 +32,7 @@ def calculate_correct_answer(question):
     Returns:
         Return 'yes' or 'no' (str)
     """
-    if is_even(question):
-        return 'yes'
-    return 'no'
+    return 'yes' if is_even(question) else 'no'
 
 
 def generate_round():
@@ -55,6 +42,7 @@ def generate_round():
         Returns calling a functions that
         returns of values question and answer
     """
-    question = generate_question()
+    number_size_limiter = 99
+    question = random.randint(1, number_size_limiter)
     correct_answer = calculate_correct_answer(question)
     return question, correct_answer
