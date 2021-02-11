@@ -4,6 +4,7 @@ import operator
 import random
 
 DESCRIPTION = 'What is the result of the expression?'
+OPERATORS = {'+': operator.add, '-': operator.sub, '*': operator.mul}
 
 
 def generate_question():
@@ -16,7 +17,7 @@ def generate_question():
     number_size_limiter = 99
     first_number = random.randint(1, number_size_limiter)
     second_number = random.randint(1, number_size_limiter)
-    math_operation_sign = random.choice(('+', '-', '*'))
+    math_operation_sign = random.choice(list(OPERATORS.keys()))
     return '{0} {1} {2}'.format(
         first_number,
         math_operation_sign,
@@ -34,8 +35,7 @@ def calculate_correct_answer(question):
         Return the result of evaluating a mathematical expression (str)
     """
     question = question.split()
-    operators = {'+': operator.add, '-': operator.sub, '*': operator.mul}
-    expr_result = operators[question[1]](
+    expr_result = OPERATORS[question[1]](
         int(question[0]),
         int(question[2]),
     )
