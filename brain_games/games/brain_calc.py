@@ -34,7 +34,6 @@ def calculate_correct_answer(question):
     Returns:
         Return the result of evaluating a mathematical expression (str)
     """
-    question = question.split()
     return operators[question[1]](
         int(question[0]),
         int(question[2]),
