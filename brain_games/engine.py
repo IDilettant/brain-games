@@ -15,11 +15,11 @@ def welcome_user():
     return username
 
 
-def run_engine(game_modul, rounds_number=3):
+def run_game(game, rounds_number=3):
     """Run template for text game.
 
     Args:
-        game_modul:
+        game:
             Provides access to functions that
             generate values unique for each game
         rounds_number (int):
@@ -29,9 +29,9 @@ def run_engine(game_modul, rounds_number=3):
         Return None.
     """
     username = welcome_user()
-    print(game_modul.DESCRIPTION)
-    for _point in range(rounds_number):  # noqa: WPS122
-        question, correct_answer = game_modul.generate_round()
+    print(game.DESCRIPTION)
+    for _ in range(rounds_number):  # noqa: WPS122
+        question, correct_answer = game.generate_round()
         print('Question: {0}'.format(question))
         answer = prompt.string('Your answer: ')
         if answer == correct_answer:
@@ -42,6 +42,6 @@ def run_engine(game_modul, rounds_number=3):
 Let's try again, {2}!
                 """.format(answer, correct_answer, username),
             )
-            return None
+            return
 
     print('Congratulations, {0}!'.format(username))

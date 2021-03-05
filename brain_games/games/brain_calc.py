@@ -4,39 +4,41 @@ import operator
 import random
 
 DESCRIPTION = 'What is the result of the expression?'
+NUMBER_LIMITER = 99
 operators = {'+': operator.add, '-': operator.sub, '*': operator.mul}
 
 
-def generate_question():
+def generate_expression():
     """Generate a mathematical expression with two random terms.
 
     Returns:
-        Return mathematical expression (str)
+        Return tuple with elements of mathematical expression (str)
     """
     # limit the random number to two-digits for the convenience of the player
-    number_size_limiter = 99
-    first_number = random.randint(1, number_size_limiter)
-    second_number = random.randint(1, number_size_limiter)
-    math_operation_sign = random.choice(list(operators.keys()))
+    first_number = random.randint(1, NUMBER_LIMITER)
+    second_number = random.randint(1, NUMBER_LIMITER)
+    operation = random.choice(list(operators.keys()))
     return (
         first_number,
-        math_operation_sign,
+        operation,
         second_number,
     )
 
 
-def calculate_correct_answer(question):
+def calculate_expression(frist_number, operation, second_number):
     """Calculate a question and return answer.
 
     Args:
-        question (str): mathematical expression
+        frist_number (str): number
+        second_number (str): number
+        operation (str): math operation sign
 
     Returns:
         Return the result of evaluating a mathematical expression (str)
     """
-    return operators[question[1]](
-        int(question[0]),
-        int(question[2]),
+    return operators[operation](
+        int(frist_number),
+        int(second_number),
     )
 
 
@@ -47,7 +49,11 @@ def generate_round():
         Returns calling a functions that
         returns of values question and answer
     """
-    question = generate_question()
-    correct_answer = str(calculate_correct_answer(question))
-    question = '{0} {1} {2}'.format(*question)
+    frist_number, operation, second_number = generate_expression()
+    correct_answer = str(calculate_expression(
+        frist_number,
+        operation,
+        second_number,
+    ))
+    question = '{0} {1} {2}'.format(frist_number, operation, second_number)
     return question, correct_answer

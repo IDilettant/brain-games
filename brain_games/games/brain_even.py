@@ -5,34 +5,19 @@ import random
 DESCRIPTION = (
     'Answer "yes" if the number is even, otherwise answer "no".'
 )
+NUMBER_LIMITER = 99
 
 
-def is_even(question):
+def is_even(num):
     """Determine if the number is even.
 
     Args:
-        question (int): some number
+        num (int): some number
 
     Returns:
         Return True or False (bool)
     """
-    if question % 2 == 0:
-        return True
-    return False
-
-
-def calculate_correct_answer(question):
-    """Check a number for even.
-
-    Return 'yes' or 'no' depending on its parity
-
-    Args:
-        question (int): some number
-
-    Returns:
-        Return 'yes' or 'no' (str)
-    """
-    return 'yes' if is_even(question) else 'no'
+    return num % 2 == 0
 
 
 def generate_round():
@@ -42,7 +27,6 @@ def generate_round():
         Returns calling a functions that
         returns of values question and answer
     """
-    number_size_limiter = 99
-    question = random.randint(1, number_size_limiter)
-    correct_answer = calculate_correct_answer(question)
+    question = random.randint(1, NUMBER_LIMITER)
+    correct_answer = 'yes' if is_even(question) else 'no'
     return question, correct_answer

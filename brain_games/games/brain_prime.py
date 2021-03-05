@@ -5,49 +5,26 @@ import random
 DESCRIPTION = (
     'Answer "yes" if given number is prime. Otherwise answer "no".'
 )
+NUMBER_LIMITER = 99
 
 
-def generate_question():
-    """Generate a random number.
-
-    Returns:
-        Return number (int)
-    """
-    number_size_limiter = 99
-    return random.randint(1, number_size_limiter)
-
-
-def is_prime(question):
+def is_prime(num):
     """Determine if a number is prime.
 
     Args:
-        question (int): some number
+        num (int): number
 
     Returns:
         Return True or False (bool)
     """
-    if question == 2:
+    if num == 2:
         return True
-    if question % 2 == 0 or question < 2:
+    if num % 2 == 0 or num < 2:
         return False
-    for item in range(3, int(question ** 0.5) + 1, 2):  # noqa: WPS110
-        if question % item == 0:
+    for item in range(3, int(num ** 0.5) + 1, 2):  # noqa: WPS110
+        if num % item == 0:
             return False
     return True
-
-
-def calculate_correct_answer(question):
-    """Check a number for prime.
-
-    Return 'yes' or 'no' depending on result of checking
-
-    Args:
-        question (int): some number
-
-    Returns:
-        Return 'yes' or 'no' (str)
-    """
-    return 'yes' if is_prime(question) else 'no'
 
 
 def generate_round():
@@ -57,6 +34,6 @@ def generate_round():
         Returns calling a functions that
         returns of values question and answer
     """
-    question = generate_question()
-    correct_answer = calculate_correct_answer(question)
+    question = random.randint(1, NUMBER_LIMITER)
+    correct_answer = 'yes' if is_prime(question) else 'no'
     return question, correct_answer
