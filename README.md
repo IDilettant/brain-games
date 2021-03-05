@@ -9,12 +9,22 @@ The aim of the game is to find the results of short mathematical expressions. Th
 
 Examples of games:
 
-Even-check game demonstration: https://asciinema.org/a/xAc8nz7Rxds2jKtY1iEWeHqSR
+Even-check game demonstration:
 
-Calculator game demonstration: https://asciinema.org/a/ZuggcGqw6CTYU6Xj2iobA6iRQ
+[![asciicast](https://asciinema.org/a/xAc8nz7Rxds2jKtY1iEWeHqSR.svg)](https://asciinema.org/a/xAc8nz7Rxds2jKtY1iEWeHqSR)
 
-Greatest common divisor game demonsration: https://asciinema.org/a/szEHoUHmy8P7KIdOBc6bFRkxc
+Calculator game demonstration:
 
-Arithmetic progression game demonstration: https://asciinema.org/a/PNX38HOI6HfKMo27U2YZ5pAS1
+[![asciicast](https://asciinema.org/a/ZuggcGqw6CTYU6Xj2iobA6iRQ.svg)](https://asciinema.org/a/ZuggcGqw6CTYU6Xj2iobA6iRQ)
 
-Prime number game demonstration: https://asciinema.org/a/mygmU0V6hPebEFXVD7xDtiSjW
+Greatest common divisor game demonsration:
+
+[![asciicast](https://asciinema.org/a/szEHoUHmy8P7KIdOBc6bFRkxc.svg)](https://asciinema.org/a/szEHoUHmy8P7KIdOBc6bFRkxc)
+
+Arithmetic progression game demonstration:
+
+[![asciicast](https://asciinema.org/a/PNX38HOI6HfKMo27U2YZ5pAS1.svg)](https://asciinema.org/a/PNX38HOI6HfKMo27U2YZ5pAS1)
+
+Prime number game demonstration:
+
+[![asciicast](https://asciinema.org/a/mygmU0V6hPebEFXVD7xDtiSjW.svg)](https://asciinema.org/a/mygmU0V6hPebEFXVD7xDtiSjW)
